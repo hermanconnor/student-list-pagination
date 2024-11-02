@@ -52,18 +52,8 @@ const initApp = () => {
     const totalPages = Math.ceil(filteredStudents.length / STUDENTS_PER_PAGE);
 
     for (let i = 1; i <= totalPages; i++) {
-      const pageItem = document.createElement('li');
-      const pageButton = document.createElement('button');
-      pageButton.type = 'button';
-      pageButton.innerText = i;
-      pageButton.setAttribute('aria-label', `Page ${i}`);
-
-      // if (i === currentPage) {
-      //   pageButton.classList.add('active');
-      // }
-
-      pageItem.appendChild(pageButton);
-      pagination.appendChild(pageItem);
+      const pageItem = `<li><button type="button" aria-label="Page ${i}">${i}</button></li>`;
+      pagination.insertAdjacentHTML('beforeend', pageItem);
     }
 
     pagination.addEventListener('click', (e) => {
@@ -87,7 +77,20 @@ const initApp = () => {
     });
   }
 
+  function renderSearchBar() {
+    const searchForm = `
+      <label for="search" class="student-search">
+        <input id="search" type="search" placeholder="Search by name...">
+        <button type="button" aria-label="Search"><img src="img/icn-search.svg" alt="Search icon"></button>
+      </label>`;
+
+    document
+      .querySelector('.header')
+      .insertAdjacentHTML('beforeend', searchForm);
+  }
+
   // Initial render
+  renderSearchBar();
   renderStudents(currentPage);
   renderPagination();
   updateActivePage();
