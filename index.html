@@ -12,6 +12,65 @@
     <title>Student List</title>
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/styles.css" />
+    <script defer src="js/data.js"></script>
+    <script defer src="js/script.js"></script>
   </head>
-  <body></body>
+  <body>
+    <header class="header">
+      <h1>Students</h1>
+      <!-- 
+      Dynamically insert search form here 
+
+      EXAMPLE - Search form:
+
+      <label for="search" class="student-search">
+        <input id="search" type="search" placeholder="Search by name..." />
+        <button type="button" aria-label="Search">
+          <img src="img/icn-search.svg" alt="Search icon" />
+        </button>
+      </label>
+      -->
+    </header>
+
+    <main class="page">
+      <ul class="student-list">
+        <!-- 
+        Dynamically insert students here
+
+        EXAMPLE - Student list item:
+
+         <li class="student-item cf">
+          <div class="student-details">
+            <img
+              class="avatar"
+              src="https://randomuser.me/api/portraits/women/25.jpg"
+              alt="Profile picture of Ethel Dean"
+            />
+            <h2>Ethel Dean</h2>
+            <span class="email">ethel.dean@example.com</span>
+          </div>
+          <div class="joined-details">
+            <time class="date" datetime="2005-12-15"
+              >Joined December 15, 2005</time
+            >
+          </div>
+        </li>
+        -->
+      </ul>
+      <nav class="pagination">
+        <ul class="link-list">
+          <!-- 
+          Dynamically insert pagination buttons here
+
+          EXAMPLE - Two pagination buttons, one with active class, one without:
+
+          <li>
+            <button type="button" class="active" aria-label="Page 1">1</button>
+          </li>
+          <li><button type="button" aria-label="Page 2">2</button></li>         
+          -->
+        </ul>
+      </nav>
+    </main>
+  </body>
 </html>
