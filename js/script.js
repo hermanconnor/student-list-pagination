@@ -77,6 +77,17 @@ const initApp = () => {
     });
   }
 
+  // Handle no results case
+  function showNoResults() {
+    const studentList = document.querySelector('.student-list');
+
+    studentList.innerHTML =
+      '<li><p class="no-results">No Student Found</p></li>';
+
+    const linkList = document.querySelector('.link-list');
+    linkList.innerHTML = '';
+  }
+
   function renderSearchBar() {
     const searchForm = `
       <label for="search" class="student-search">
@@ -89,11 +100,34 @@ const initApp = () => {
       .insertAdjacentHTML('beforeend', searchForm);
   }
 
+  function handleSearch(event) {
+    const query = event.target.value.toLowerCase();
+
+    filteredStudents = data.filter(
+      (student) =>
+        student.name.first.toLowerCase().includes(query) ||
+        student.name.last.toLowerCase().includes(query) ||
+        student.email.toLowerCase().includes(query),
+    );
+
+    if (filteredStudents.length === 0) {
+      showNoResults();
+    } else {
+      currentPage = 1; // Reset to first page
+      renderStudents(currentPage);
+      renderPagination();
+      updateActivePage();
+    }
+  }
+
   // Initial render
   renderSearchBar();
   renderStudents(currentPage);
   renderPagination();
   updateActivePage();
+
+  // Add event listener to the search input
+  document.getElementById('search').addEventListener('input', handleSearch);
 };
 
 document.addEventListener('DOMContentLoaded', initApp);
