@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project demonstrates data pagination and filtering using a list of student profiles. It allows users to search for students by name or email, navigate through pages of student data, and see relevant details in a user-friendly format. This application is built with HTML, CSS, and JavaScript.
+This project demonstrates data pagination and filtering using a list of student profiles. It allows users to search for students by name or email, navigate through pages of student data, and see relevant details in a user-friendly format. This was my second project in the Treehouse full stack javascript techdegree. This application is built with HTML, CSS, and JavaScript.
 
 ## Features
 
